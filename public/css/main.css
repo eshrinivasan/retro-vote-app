@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font-size: 1.7rem;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h2 {
+  font-size: 2.0rem;
+}
+
+.button {
+  font-size: 1.5rem;
+}
+
+.container {
+  width: 450px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 3.0rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.signin,
+.signup {
+  margin-top: 40px;
+}
+
+.signin h2,
+.signup h2 {
+  font-weight: 200;
+}
+
+.signin form,
+.signup form {
+  width: 100%;
+}
+
+.signin input,
+.signup input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.signin a,
+.signup a {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.signin input[type=submit],
+.signup input[type=submit] {
+  padding: 7px;
+  background-color: #2ECC40;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.top-bar {
+  margin-top: 20px;
+  text-align: right;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2.sectitle {
+  font-weight: 200;
+  padding-bottom: 5px;
+  border-bottom: 1px #aaa dashed;
+  border-left: 5px #aaa solid;
+  padding-left: 7px;
+}
+
+.newtodo-form textarea {
+  width: 100%;
+  height: 70px;
+  margin-top: 20px;
+}
+
+.newtodo-form input[type=submit] {
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 20px;
+  padding: 7px;
+  border: none;
+  border-radius: 3px;
+  background-color: #0074D9;
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo {
+  margin-bottom: 25px;
+}
+
+.todo .content {
+  overflow-wrap: break-word;
+}
+
+.todo-bottom-item {
+  margin-top: 15px;
+  position: relative;
+}
+
+.todo .time {
+  display: inline-block;
+  height: 25px;
+  padding-top: 10px;
+  font-size: 1.4rem;
+}
+
+.todo form {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.todo form .button {
+  border: none;
+  border-radius: 2px;
+  background-color: #FF4136;
+  color: #fff;
+  height: 25px;
+}
+
+.button:hover {
+  cursor: pointer;
+}

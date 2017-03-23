@@ -1,0 +1,11 @@
+.signin
+  %h2
+    Sign In
+  %form(action='signin' method='post')
+    %input(type='text' placeholder='Username' name='username')
+    %br
+    %input(type='password' placeholder='Password' name='password')
+    %br
+    %input(type='submit' value='Sign in' class='button')
+    %a(href='signup')
+      create a new account

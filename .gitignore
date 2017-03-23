@@ -1,0 +1,6 @@
+vendor/
+.bundle/
+Gemfile.lock
+db/schema.rb
+db/todo.db
+

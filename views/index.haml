@@ -1,0 +1,28 @@
+.top-bar
+  #{@username}
+  |
+  %a(href='/signout') signout
+
+%section
+  %h2(class='sectitle')
+    New todo
+
+  %form(action='/todo/new' method='post' class='newtodo-form')
+    -# %input(type='text' placeholder='content...' name='content')
+    %textarea(placeholder='content...' name='content')
+    %input(type='submit' value='create' class='button')
+
+%section
+  %h2(class='sectitle')
+    Todo list
+  %ul(class='todo-list')
+    - if not @todos.nil?
+      - @todos.each do |todo|
+        %li(class='todo')
+          %p(class='content')
+            #{todo.content}
+          .todo-bottom-item
+            %p(class='time')
+              #{todo.created_at}
+            %form(action='/todo/delete/#{todo.id}' method='post')
+              %input(type='submit' value='Delete' class='button')

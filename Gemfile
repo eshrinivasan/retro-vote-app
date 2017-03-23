@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'sinatra-activerecord'
+gem 'activerecord'
+gem 'rake'
+gem 'haml'
+gem 'coffee-script'
+gem 'sqlite3'
+gem 'bcrypt'
