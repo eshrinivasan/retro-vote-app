@@ -30,7 +30,7 @@ h2 {
 }
 
 .container {
-  width: 450px;
+  width: 800px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -138,6 +138,7 @@ h2.sectitle {
 
 .todo .content {
   overflow-wrap: break-word;
+  font-size:12px;
 }
 
 .todo-bottom-item {
@@ -154,18 +155,22 @@ h2.sectitle {
 
 .todo form {
   display: inline-block;
-  position: absolute;
-  right: 0;
+}
+
+.todo .voteicon{
+  margin-right: 40px;
 }
 
 .todo form .button {
-  border: none;
   border-radius: 2px;
-  background-color: #FF4136;
-  color: #fff;
   height: 25px;
 }
 
 .button:hover {
   cursor: pointer;
 }
+
+.points{
+  font-size:10px;
+}
+

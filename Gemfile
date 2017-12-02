@@ -8,3 +8,5 @@ gem 'rake'
 gem 'haml'
 gem 'sqlite3'
 gem 'bcrypt'
+gem 'rails_rest_vote'
+gem 'pry-nav', group: [:development, :test]

@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/reloader'
+require 'pry'
+require 'logger'
+
+logger = Logger.new(STDOUT)
 
 require_relative 'models/user'
 require_relative 'models/todo'
@@ -20,6 +24,12 @@ class TodoApp < Sinatra::Base
     def authenticated?
       not session[:userdata].nil?
     end
+  end
+
+  @@count = 0
+
+  def self.increment()
+    @@count = @@count + 1
   end
 
   get '/' do
@@ -50,6 +60,19 @@ class TodoApp < Sinatra::Base
       todo.destroy
       redirect '/'
     end
+  end
+
+  post '/todo/vote/:todo_id' do 
+    todo = Todo.find_by(id: params[:todo_id])
+    todo.update(:points => TodoApp::increment())
+    #todo.update = todo.points + 1
+    todo.save
+    redirect '/'
+  end 
+
+  before do
+    puts '[Params]'
+    p params
   end
 
   # for session management
