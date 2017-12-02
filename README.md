@@ -1,15 +1,13 @@
-<<<<<<< HEAD
 ## What's this ?
-A simple todo app using Sinatra.
+A simple voting application using Sinatra, can be used for Anonymous Retros
 
 ## How to run this
 ```
-$ git clone https://github.com/d2verb/todo-app
+$ git clone <github url of this repo>
 $ cd todo-app
 $ bundle install --path=vendor/bundle
 $ bundle exec rake db:migrate
 $ bundle exec rackup
 ```
-=======
-# retro-vote-app
->>>>>>> 0710d4a24fff640b98be5dde7ceb65db6ceb9629
+### Credits: 
+https://github.com/d2verb/todo-app
