@@ -32,6 +32,10 @@ class TodoApp < Sinatra::Base
     @@count = @@count + 1
   end
 
+  def self.count()
+    return @@count
+  end
+
   get '/' do
     if authenticated?
       @username = session[:userdata][:username]
@@ -64,7 +68,7 @@ class TodoApp < Sinatra::Base
 
   post '/todo/vote/:todo_id' do 
     todo = Todo.find_by(id: params[:todo_id])
-    todo.update(:points => TodoApp::increment())
+    todo.update(:points => todo.points + 1)
     #todo.update = todo.points + 1
     todo.save
     redirect '/'
