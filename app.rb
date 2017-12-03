@@ -47,7 +47,7 @@ class TodoApp < Sinatra::Base
   get '/' do
     if authenticated?
       @username = session[:userdata][:username]
-      @todos = Todo.where(user_id: session[:userdata][:id]).order(created_at: :desc)
+      @todos = Todo.where(user_id: session[:userdata][:id]).order(points: :desc)
       haml :index
     else
       redirect '/signin'
@@ -61,7 +61,7 @@ class TodoApp < Sinatra::Base
 
   get '/download.json' do
     content_type :json
-    @todos = Todo.where(user_id: session[:userdata][:id]).order(created_at: :desc)
+    @todos = Todo.where(user_id: session[:userdata][:id]).order(points: :desc)
     @todos.to_json
   end
 
@@ -70,7 +70,7 @@ class TodoApp < Sinatra::Base
     todo = Todo.new
     todo.user_id = session[:userdata][:id]
     todo.content = params[:content]
-    binding.pry
+    #binding.pry
     if todo.valid?
       todo.save
       redirect '/'
