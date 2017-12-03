@@ -12,3 +12,5 @@ gem 'rails_rest_vote'
 gem "pry-byebug"
 gem "better_errors"
 gem "binding_of_caller"
+gem "acts_as_xlsx"
+gem "json"

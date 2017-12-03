@@ -166,6 +166,9 @@ h2.sectitle {
   height: 25px;
 }
 
+.sectitle form{
+  float:right;
+}
 .button:hover {
   cursor: pointer;
 }

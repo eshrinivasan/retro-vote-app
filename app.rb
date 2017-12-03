@@ -5,6 +5,8 @@ require 'pry'
 require 'logger'
 require "pry-byebug"
 require "better_errors"
+require 'json'
+
 configure :development do
   use BetterErrors::Middleware
   BetterErrors.application_root = File.expand_path('..', __FILE__)
@@ -50,6 +52,17 @@ class TodoApp < Sinatra::Base
     else
       redirect '/signin'
     end
+  end
+
+  get '/download' do 
+    @todos = Todo.all
+    haml :download
+  end
+
+  get '/download.json' do
+    content_type :json
+    @todos = Todo.where(user_id: session[:userdata][:id]).order(created_at: :desc)
+    @todos.to_json
   end
 
   # for handling todos

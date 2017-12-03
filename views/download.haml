@@ -1,0 +1,7 @@
+%section
+  %ul(class='todo-list')
+    - if not @todos.nil?
+      - @todos.each do |todo|
+        %li(class='todo')
+          %p(class='content')
+            #{todo.content} #{todo.points} 
