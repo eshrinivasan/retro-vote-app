@@ -3,6 +3,12 @@ require 'sinatra/activerecord'
 require 'sinatra/reloader'
 require 'pry'
 require 'logger'
+require "pry-byebug"
+require "better_errors"
+configure :development do
+  use BetterErrors::Middleware
+  BetterErrors.application_root = File.expand_path('..', __FILE__)
+end
 
 logger = Logger.new(STDOUT)
 
@@ -51,7 +57,7 @@ class TodoApp < Sinatra::Base
     todo = Todo.new
     todo.user_id = session[:userdata][:id]
     todo.content = params[:content]
-
+    binding.pry
     if todo.valid?
       todo.save
       redirect '/'
@@ -69,7 +75,6 @@ class TodoApp < Sinatra::Base
   post '/todo/vote/:todo_id' do 
     todo = Todo.find_by(id: params[:todo_id])
     todo.update(:points => todo.points + 1)
-    #todo.update = todo.points + 1
     todo.save
     redirect '/'
   end 

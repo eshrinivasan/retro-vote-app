@@ -9,4 +9,6 @@ gem 'haml'
 gem 'sqlite3'
 gem 'bcrypt'
 gem 'rails_rest_vote'
-gem 'pry-nav', group: [:development, :test]
+gem "pry-byebug"
+gem "better_errors"
+gem "binding_of_caller"
